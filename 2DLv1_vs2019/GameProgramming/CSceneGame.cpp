@@ -12,28 +12,28 @@ void CSceneGame::Init() {
 	//クラスのメンバ変数への代入
 //37
 	CPlayer *Player = new CPlayer();
-	Player->x = -120;
-	Player->y = -1150;
+	Player->x = -250;
+	Player->y = -650;
 	Player->w = 25;
 	Player->h = 25;
 	Player->mEnabled = true;
 //37
-	int map[10][7] =
+	int map[10][8] =
 	{
-		{ 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 1, 0, 0, 0, 1 },
-		{ 1, 2, 0, 0, 1, 0, 1 },
-		{ 1, 0, 1, 2, 0, 0, 1 },
-		{ 1, 0, 0, 0, 1, 2, 1 },
-		{ 1, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 1 },
-		{ 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 1, 0, 0, 0, 0, 1 },
+		{ 1, 2, 0, 0, 1, 0, 0, 1 },
+		{ 1, 0, 1, 2, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 1, 2, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 //37	MapSize = 0;	//0を代入する
 	for (int j = 0; j < 10; j++) {
-		for (int i = 0; i < 7; i++) {
+		for (int i = 0; i < 8; i++) {
 			//mapの要素が1の時、四角形配置
 			if (map[j][i] == 1) {
 				//37
@@ -115,10 +115,26 @@ void CSceneGame::Update() {
 		}
 	}
 
+	double mLeft=400, mRight=-400, mBottom=-700, mTop;
+	
+	//画面範囲上の設定
+	mTop = mBottom + 600.0f;
+
+	/*画面の投影変更開始*/
+	//行列（設定）をプロジェクションモードへ変更
+	glMatrixMode(GL_PROJECTION);
+	glLoadIdentity();  //行列（設定）を初期化
+ //2Dの投影範囲を設定
+	gluOrtho2D(mRight,mLeft,mBottom, mTop);
+
 	for (int i = 0; i < VectorRect.size(); i++) {
 		//描画処理
 		VectorRect[i]->Render();
 	}
+
+	glLoadIdentity();  //行列（設定）を初期化
+	//2Dの投影範囲を設定
+	gluOrtho2D(-400, 400, -300, 300);
 
 	CText::DrawChar('S', -350, 250, 16, 16);
 	CText::DrawChar('c', -350 + 32, 250, 16, 16);

@@ -11,7 +11,7 @@ public:
 	CPlayer();
 	void Update();
 	void Render();
-
+	static CPlayer* spInstance;
 	//36
 	void Collision(CRectangle *i, CRectangle *y);
 };

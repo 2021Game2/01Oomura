@@ -11,6 +11,7 @@ CPlayer::CPlayer()
 , FireCount(0)
 {
 	mTag = EPLAYER;
+	spInstance = this;
 }
 
 void CPlayer::Update() {
@@ -20,25 +21,24 @@ void CPlayer::Update() {
 		x -= 3;
 		mFx = -1;
 		mFy = 0;
-		if (x - w < -400) {
-			x = -400 + w;
-		}
+		
 	}
 	if (CKey::Push('D')) {
 		x += 3;
 		mFx = 1;
 		mFy = 0;
-		if (x + w > 400) {
-			x = 400 - w;
-		}
+		
 	}
 	if (CKey::Push('W')) {
 		y += 3;
 		mFx = 0;
 		mFy = 1;
-		if (y + h > 300) {
-			y = 300 - h;
-		}
+		
+	}
+	if (CKey::Push('S')) {
+		y -= 3;
+		mFx = 0;
+		mFy = -1;
 	}
 	
 	//37
@@ -64,6 +64,8 @@ void CPlayer::Update() {
 	}
 	//37
 }
+
+CPlayer* CPlayer::spInstance = nullptr;
 
 void CPlayer::Render() {
 	CRectangle::Render(Texture, 146 - 16, 146 + 16, 146 + 16, 146 - 16);
