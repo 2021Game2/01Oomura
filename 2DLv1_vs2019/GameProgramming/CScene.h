@@ -7,7 +7,7 @@
 class CScene {
 public:
 	//シーンの識別子
-	enum EScene {
+	enum  EScene {
 		EGAME,	//ゲーム
 		ETITLE, 	//タイトル
 	};

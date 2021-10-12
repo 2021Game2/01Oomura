@@ -11,8 +11,8 @@ CEnemy::CEnemy()
 	//37
 //	mEnabled = true;
 	mTag = EENEMY;
-	w = 25;
-	h = 25;
+	w = 20;
+	h = 20;
 }
 
 void CEnemy::Update() {

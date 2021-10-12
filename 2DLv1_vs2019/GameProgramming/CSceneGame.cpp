@@ -13,14 +13,15 @@ void CSceneGame::Init() {
 //37
 	CPlayer *Player = new CPlayer();
 	Player->x = -250;
-	Player->y = -650;
+	Player->y = -750;
 	Player->w = 25;
 	Player->h = 25;
 	Player->mEnabled = true;
 //37
-	int map[10][8] =
+	int map[11][8] =
 	{
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 1, 0, 0, 0, 0, 1 },
@@ -32,7 +33,7 @@ void CSceneGame::Init() {
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 //37	MapSize = 0;	//0を代入する
-	for (int j = 0; j < 10; j++) {
+	for (int j = 0; j < 11; j++) {
 		for (int i = 0; i < 8; i++) {
 			//mapの要素が1の時、四角形配置
 			if (map[j][i] == 1) {
@@ -115,10 +116,13 @@ void CSceneGame::Update() {
 		}
 	}
 
-	double mLeft=400, mRight=-400, mBottom=-700, mTop;
-	
+	double mLeft = 400, mRight = -400, mBottom, mTop;
+
+	//画面範囲下の設定
+	mBottom = CPlayer::spInstance->y - 125.0;
+
 	//画面範囲上の設定
-	mTop = mBottom + 600.0f;
+	mTop = mBottom + 550.0f;
 
 	/*画面の投影変更開始*/
 	//行列（設定）をプロジェクションモードへ変更
