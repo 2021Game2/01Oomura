@@ -21,7 +21,7 @@ void CSceneGame::Init() {
 	int map[11][8] =
 	{
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 3, 0, 1 },
 		{ 1, 0, 0, 2, 0, 0, 0, 1 },
 		{ 1, 2, 0, 0, 0, 2, 0, 1 },
 		{ 1, 0, 1, 0, 0, 0, 0, 1 },
@@ -51,9 +51,9 @@ void CSceneGame::Init() {
 				CEnemy *Enemy = new CEnemy();
 				Enemy->x = i * 100 - 350;
 				Enemy->y = j * -100 + 250;
-				//‰E‚ÖˆÚ“®
+				//‰º‚ÖˆÚ“®
 				Enemy->mFx = 0;
-				Enemy->mFy = -1;
+				Enemy->mFy = -2;
 				/*37
 				for (int k = 0; k < 10; k++) {
 					if (!Enemy[k].mEnabled) {
@@ -70,6 +70,15 @@ void CSceneGame::Init() {
 				}
 				*/
 			}
+			else if (map[j][i] == 3) {
+				CEnemyb* Enemy = new CEnemyb();
+				Enemy->x = i * 100 - 350;
+				Enemy->y = j * -100 + 250;
+				//‰º‚ÖˆÚ“®
+				Enemy->mFx = 0;
+				Enemy->mFy = -1;
+			}
+
 		}
 	}
 }

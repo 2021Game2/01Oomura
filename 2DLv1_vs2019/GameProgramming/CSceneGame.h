@@ -7,6 +7,7 @@
 #include "CPlayer.h"
 #include "CEnemy.h"
 #include "CText.h"
+#include"CEnemyb.h"
 // テクスチャクラスのインクルード
 #include "CTexture.h"
 #include "CMap.h"
