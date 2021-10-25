@@ -25,19 +25,19 @@ void CEnemy::Update() {
 	else {
 		//37s
 		//弾を4発四方へ発射する
-		for (int i = 0; i < 4; i++) {
-			CBullet *EBullet = new CBullet();
-			//座標設定
-			EBullet->x = x;
-			EBullet->y = y;
-			//移動量設定
-			EBullet->mFx = (i - 2) % 2 * 2;
-			EBullet->mFy = (i - 1) % 2 * 2;
-			//有効にする
-			EBullet->mEnabled = true;
-			EBullet->mTag = EENEMYBULLET;
-		}
-		mFireCount = 60;
+		//for (int i = 0; i < 4; i++) {
+		//	CBullet *EBullet = new CBullet();
+		//	//座標設定
+		//	EBullet->x = x;
+		//	EBullet->y = y;
+		//	//移動量設定
+		//	EBullet->mFx = (i - 2) % 2 * 2;
+		//	EBullet->mFy = (i - 1) % 2 * 2;
+		//	//有効にする
+		//	EBullet->mEnabled = true;
+		//	EBullet->mTag = EENEMYBULLET;
+		//}
+		//mFireCount = 60;
 		//37e
 		/* 37
 		//敵弾数分繰り返し
@@ -129,8 +129,8 @@ bool CEnemy::Collision(const CRectangle &r) {
 		switch (r.mTag) {
 		case EBLOCK:
 			//衝突していれば反転
-			mFx *= -1;
-			mFy *= -1;
+			/*mFx *= -1;
+			mFy *= -1;*/
 			break;
 		case EPLAYERBULLET:
 			//プレイヤーの弾に当たると、無効にする
