@@ -19,13 +19,13 @@ void CPlayer::Update() {
 	//staticƒƒ\ƒbƒh‚Í‚Ç‚±‚©‚ç‚Å‚àŒÄ‚×‚é
 	if (CKey::Push('A')) {
 		x -= 3;
-		mFx = -1;
+		mFx = -2;
 		mFy = 0;
 		
 	}
 	if (CKey::Push('D')) {
 		x += 3;
-		mFx = 1;
+		mFx = 2;
 		mFy = 0;
 		
 	}
