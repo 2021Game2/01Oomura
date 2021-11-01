@@ -4,6 +4,7 @@
 //残り時間（30秒）
 int Time = 30 * 60;
 int Remain = 3;
+//int Cnt = 0;
 
 void CSceneGame::Init() {
 	//シーンの設定
@@ -84,6 +85,11 @@ void CSceneGame::Init() {
 }
 
 void CSceneGame::Update() {
+	/*if (Cnt = 60) 
+	{
+		
+	}*/
+
 	/*
 	配列の要素分繰り返す
 	配列名.size()

@@ -37,7 +37,7 @@ void CEnemyb::Update() {
 			EBullet->mEnabled = true;
 			EBullet->mTag = EENEMYBULLET;
 		}
-		mFireCount = 60;
+		mFireCount = 120;
 		//37e
 /* 37
 //“G’e”•ªŒJ‚è•Ô‚µ
