@@ -8,7 +8,7 @@ int Remain = 3;
 
 void CSceneGame::Init() {
 	//シーンの設定
-	mScene = EGAME;
+	mScene =EGAME;
 
 	//クラスのメンバ変数への代入
 //37
@@ -19,25 +19,23 @@ void CSceneGame::Init() {
 	Player->h = 25;
 	Player->mEnabled = true;
 //37  
-	int map[14][8] =
+	int map[12][8] =
 	{
-		{ 0, 2, 0, 2, 3, 0, 0, 0 },
-		{ 0, 0, 2, 0, 0, 2, 0, 0 },
-		{ 0, 3, 0, 0, 2, 0, 2, 0 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 0, 2, 0, 3, 0, 0, 1 },
 		{ 1, 0, 0, 2, 0, 0, 3, 1 },
 		{ 1, 0, 0, 0, 0, 2, 0, 1 },
 		{ 1, 2, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 1, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 1, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 //37	MapSize = 0;	//0を代入する
-	for (int j = 0; j < 14; j++) {
+	for (int j = 0; j < 12; j++) {
 		for (int i = 0; i < 8; i++) {
 			//mapの要素が1の時、四角形配置
 			if (map[j][i] == 1) {
@@ -134,7 +132,7 @@ void CSceneGame::Update() {
 		}
 	}
 
-	double mLeft = 400, mRight = -400, mBottom, mTop;
+	double mLeft = 400, mRight = -400, mBottom , mTop ;
 
 	//画面範囲下の設定
 	mBottom = CPlayer::spInstance->y - 125.0;

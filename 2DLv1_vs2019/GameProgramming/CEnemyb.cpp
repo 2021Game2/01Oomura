@@ -132,6 +132,7 @@ bool CEnemyb::Collision(const CRectangle& r) {
 			//衝突していれば反転
 			/*mFx *= -1;
 			mFy *= -1;*/
+			y = -50;
 			break;
 		case EPLAYERBULLET:
 			//プレイヤーの弾に当たると、無効にする

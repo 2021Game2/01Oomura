@@ -54,8 +54,8 @@ void CPlayer::Update() {
 		Bullet->x = x;
 		Bullet->y = y;
 		//移動の値を設定
-		Bullet->mFx = mFx * 5;
-		Bullet->mFy = mFy * 5;
+		Bullet->mFx = 0;
+		Bullet->mFy =  5;
 		//有効にする
 		Bullet->mEnabled = true;
 		//プレイヤーの弾を設定
