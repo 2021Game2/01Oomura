@@ -18,14 +18,14 @@ void CPlayer::Update() {
 
 	//staticメソッドはどこからでも呼べる
 	if (CKey::Push('A')) {
-		x -= 3;
-		mFx = -3;
+		x -= 4;
+		mFx = 1;
 		mFy = 0;
 		
 	}
 	if (CKey::Push('D')) {
-		x += 3;
-		mFx = 3;
+		x += 4;
+		mFx = -1;
 		mFy = 0;
 		
 	}
@@ -54,7 +54,7 @@ void CPlayer::Update() {
 		Bullet->x = x;
 		Bullet->y = y;
 		//移動の値を設定
-		Bullet->mFx = 0;
+		Bullet->mFx = 1;
 		Bullet->mFy =  5;
 		//有効にする
 		Bullet->mEnabled = true;
