@@ -188,6 +188,7 @@ void CSceneGame::Update() {
 CScene::EScene CSceneGame::GetNextScene() {
 	return mScene;
 }
+
 //デストラクタ
 CSceneGame::~CSceneGame() {
 	//全てのインスタンスを削除します
