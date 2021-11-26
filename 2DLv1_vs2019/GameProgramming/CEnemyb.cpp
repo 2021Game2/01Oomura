@@ -1,5 +1,6 @@
 #include"CEnemyb.h"
 #include"CTexture.h"
+#include "CSceneGame.h"
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
 
@@ -137,9 +138,11 @@ bool CEnemyb::Collision(const CRectangle& r) {
 		case EPLAYERBULLET:
 			//プレイヤーの弾に当たると、無効にする
 			mEnabled = false;
+			CSceneGame::Score += 5;
 			break;
 		case EPLAYER:
 			mEnabled = false;
+			CSceneGame::Score -= 3;
 			break;
 		}
 		return true;

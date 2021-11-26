@@ -32,7 +32,7 @@ public:
 	void Init();
 	//更新処理のオーバーライド
 	void Update();
-
+	static int Score;
 	EScene GetNextScene();
 	//デストラクタの宣言
 	~CSceneGame();

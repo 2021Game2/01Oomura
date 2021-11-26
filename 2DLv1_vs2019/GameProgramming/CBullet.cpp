@@ -19,7 +19,7 @@ void CBullet::Update() {
 		//ˆÚ“®
 		x += mFx;
 		y += mFy;
-		if (x > 400 || x < -400 || y > 300 || y < -800)
+		if (x > 400 || x < -400 || y > 300 || y < -900)
 			mEnabled = false;
 	}
 }
@@ -69,6 +69,5 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 				return;
 			}
 		}
-
 	}
 }

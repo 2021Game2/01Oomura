@@ -5,38 +5,41 @@
 int Time = 30 * 60;
 int Remain = 3;
 //int Cnt = 0;
+int CSceneGame::Score;
 
 void CSceneGame::Init() {
 	//シーンの設定
 	mScene =EGAME;
+	Score = 0;
 
 	//クラスのメンバ変数への代入
 //37
 	CPlayer *Player = new CPlayer();
 	Player->x = -250;
-	Player->y = -750;
+	Player->y = -875;
 	Player->w = 25;
 	Player->h = 25;
 	Player->mEnabled = true;
 //37  
-	int map[12][8] =
+	int map[13][9] =
 	{
-		{ 1, 1, 1, 1, 1, 1, 1, 1 },
-		{ 1, 3, 2, 0, 3, 0, 0, 1 },
-		{ 1, 0, 0, 2, 0, 0, 2, 1 },
-		{ 1, 0, 2, 0, 0, 2, 0, 1 },
-		{ 1, 2, 0, 0, 2, 0, 3, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 0, 0, 0, 0, 0, 0, 1 },
-		{ 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1, 1 },
+		{ 1, 2, 0, 0, 3, 0, 0, 2, 1 },
+		{ 1, 0, 3, 0, 0, 0, 2, 0, 1 },
+		{ 1, 0, 0, 2, 0, 2, 0, 0, 1 },
+		{ 1, 0, 2, 0, 0, 0, 0, 3, 1 },
+		{ 1, 2, 0, 0, 2, 0, 3, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
+		{ 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
 //37	MapSize = 0;	//0を代入する
-	for (int j = 0; j < 12; j++) {
-		for (int i = 0; i < 8; i++) {
+	for (int j = 0; j < 13; j++) {
+		for (int i = 0; i < 9; i++) {
 			//mapの要素が1の時、四角形配置
 			if (map[j][i] == 1) {
 				//37
@@ -132,7 +135,7 @@ void CSceneGame::Update() {
 		}
 	}
 
-	double mLeft = 400, mRight = -400, mBottom , mTop ;
+	double mLeft = 500, mRight = -400, mBottom , mTop ;
 
 	//画面範囲下の設定
 	mBottom = CPlayer::spInstance->y - 125.0;
@@ -182,6 +185,8 @@ void CSceneGame::Update() {
 	sprintf(buf, "%d", Remain);
 	CText::DrawString(buf, 150 + 32 * 7, -250, 16, 16);
 
+	sprintf(buf, "%d", Score );
+	CText::DrawString(buf, -190, 250, 16, 16);
 }
 
 //次のシーンの取得
