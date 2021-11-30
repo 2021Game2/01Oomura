@@ -54,7 +54,7 @@ void CPlayer::Update() {
 		Bullet->x = x;
 		Bullet->y = y;
 		//ˆÚ“®‚Ì’l‚ğİ’è
-		Bullet->mFx = 1;
+		Bullet->mFx = mFx * 1;
 		Bullet->mFy =  5;
 		//—LŒø‚É‚·‚é
 		Bullet->mEnabled = true;
