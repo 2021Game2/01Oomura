@@ -37,7 +37,7 @@ void CSceneGame::Init() {
 		{ 1, 0, 0, 0, 0, 0, 0, 0, 1 },
 		{ 1, 1, 1, 1, 1, 1, 1, 1, 1 },
 	};
-//37	MapSize = 0;	//0を代入する
+//37	MapSize = 0;	//0を代入する j=縦列　i=横列
 	for (int j = 0; j < 13; j++) {
 		for (int i = 0; i < 9; i++) {
 			//mapの要素が1の時、四角形配置
@@ -181,6 +181,10 @@ void CSceneGame::Update() {
 	sprintf(buf, "%d", Remain);
 	CText::DrawString(buf, 150 + 32 * 7, -250, 16, 16);
 
+	if(Score<0)
+	{
+		Score = 0;
+	}
 	sprintf(buf, "%d", Score );
 	CText::DrawString(buf, -190, 250, 16, 16);
 }

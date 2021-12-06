@@ -134,6 +134,7 @@ bool CEnemyb::Collision(const CRectangle& r) {
 			/*mFx *= -1;
 			mFy *= -1;*/
 			y = -50;
+			CSceneGame::Score -= 3;
 			break;
 		case EPLAYERBULLET:
 			//プレイヤーの弾に当たると、無効にする
@@ -142,7 +143,6 @@ bool CEnemyb::Collision(const CRectangle& r) {
 			break;
 		case EPLAYER:
 			mEnabled = false;
-			CSceneGame::Score -= 3;
 			break;
 		}
 		return true;

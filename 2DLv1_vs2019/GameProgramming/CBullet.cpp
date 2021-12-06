@@ -35,7 +35,7 @@ void CBullet::Render() {
 
 //36
 void CBullet::Collision(CRectangle *i, CRectangle *y) {
-	if (i->mEnabled && y->mEnabled) {
+	//if (i->mEnabled && y->mEnabled) {
 		if (y->mTag == EBLOCK) {
 			if (i->Collision(*y)) {
 				mEnabled = false;
@@ -69,5 +69,5 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 				return;
 			}
 		}
-	}
+	//}
 }
