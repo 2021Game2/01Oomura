@@ -5,6 +5,7 @@
 
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
+extern int Remain ;
 
 CPlayer::CPlayer()
 : mFx(1.0f), mFy(0.0f)

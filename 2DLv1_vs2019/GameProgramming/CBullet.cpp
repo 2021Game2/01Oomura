@@ -2,6 +2,7 @@
 #include "CTexture.h"
 //extern：他のソースファイルの外部変数にアクセスする宣言
 extern CTexture Texture;
+extern int Remain;
 
 //デフォルトコンストラクタ
 CBullet::CBullet()
@@ -42,13 +43,16 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 				return;
 			}
 		}
+
 		if (i->mTag == EENEMYBULLET && y->mTag == EPLAYER) {
 			if (i->Collision(*y)) {
 				mEnabled = false;
+				Remain--;
 				return;
 			}
 
 		}
+
 		if (i->mTag == EPLAYERBULLET && y->mTag == EENEMY) {
 			if (i->Collision(*y)) {
 				mEnabled = false;
@@ -56,6 +60,7 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 			}
 
 		}
+
 		if (i->mTag == EENEMYBULLET && y->mTag == EENEMY) {
 			if (i->Collision(*y)) {
 				mEnabled = false;
@@ -63,6 +68,7 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 			}
 
 		}
+
 		if (i->mTag == EENEMYBULLET && y->mTag == EPLAYERBULLET) {
 			if (i->Collision(*y)) {
 				mEnabled = false;
