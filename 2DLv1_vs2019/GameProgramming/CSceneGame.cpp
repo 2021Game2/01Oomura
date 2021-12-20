@@ -177,7 +177,10 @@ void CSceneGame::Update() {
 	char buf[10];//9•¶Žš‚Ü‚ÅOK
 	sprintf(buf, "%d", Time / 60);
 	CText::DrawString(buf, 300, 250, 16, 16);
-
+	if (Remain < 0) 
+	{
+		Remain = 0;
+	}
 	sprintf(buf, "%d", Remain);
 	CText::DrawString(buf, 150 + 32 * 7, -250, 16, 16);
 
