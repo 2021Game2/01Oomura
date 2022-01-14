@@ -133,7 +133,7 @@ bool CEnemy::Collision(const CRectangle &r) {
 			//è’ìÀÇµÇƒÇ¢ÇÍÇŒîΩì]
 			/*mFx *= -1;
 			mFy *= -1;*/
-			y = 100;
+			y = 120;
 			CSceneGame::Score -= 1;
 			break;
 		case EPLAYERBULLET:
