@@ -76,6 +76,13 @@ void CBullet::Collision(CRectangle *i, CRectangle *y) {
 			}
 		}
 
+		if (i->mTag == EPLAYERBULLET && y->mTag == EENEMYBULLET) {
+			if (i->Collision(*y)) {
+				mEnabled = false;
+				return;
+			}
+		}
+
 		if (i->mTag ==EPLAYERBULLET && y->mTag == EENEMYB) {
 			if (i->Collision(*y)) {
 				mEnabled = false;

@@ -143,6 +143,7 @@ bool CEnemy::Collision(const CRectangle &r) {
 			break;
 		case EPLAYER:
 			mEnabled = false;
+			CSceneGame::Score -= 1;
 			break;
 		}
 		return true;
